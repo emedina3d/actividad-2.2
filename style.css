@@ -1,0 +1,251 @@
+/*Reset*/
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+ul{
+    list-style: none;
+    font-size: var(--font-sm);
+    font-weight: bold;
+}
+
+a{
+    text-decoration: none;
+    color: var(--light-color-text);
+}
+
+button{
+    font: inherit;
+}
+
+h1{
+    font-size: var(--font-lg);
+}
+
+p{
+    font-size: var(--font-sm);
+}
+
+/* ----Root Variables ----*/
+
+:root{
+    /*Colores*/
+    --primary-color-line: #5871cb;
+    --primary-color-bgA: #25346f;
+    --primary-color-bgB: #70b1f729;
+    --primary-color-text: #0c184a;
+    --dark-color-text: #0f0f0f;
+    --dark-color-bg: #000000;
+    --secondary-color-bgA: #934c0d;
+    --secondary-color-bgB: #faa52f26;
+    --secondary-color-line: rgb(190, 118, 40);
+    --secondary-color-text: #e6b386;
+    --light-color-bgA: #E2E3E9;
+    --light-color-bgB: #f2f3f9;
+    --light-color-line: #A2A3A9;
+    --light-color-text: #efefef;
+
+    /*Tipografia*/
+    --font-main: 'Segeo UI', sans-serif;
+    --font-sm: 0.6rem;
+    --font-md: 1rem;
+    --font-lg: 1.5rem;
+    --font-size-base: 16px;
+
+    /*Espaciado*/
+    --espace-sm: 0.5rem;
+    --espace-md: 1rem;
+    --espace-lg: 1.5rem;
+
+    /*Otros*/
+    --border-radius: 10px;
+    --border-radiusB: 5px;
+    --box-shadow: var(--light-color-line) 2px 2px 5px 0px;
+}
+
+/*Base*/
+
+body{
+        font-family: var(--font-main);
+    font-size: var(--font-size-base);
+    background-color: var(--light-color-bgA);
+}
+
+/*Componentes*/
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header{
+    background-color: var(--primary-color-bgA);
+    color: var(--light-color-text);
+    flex-direction: column;
+    justify-items: center;
+}
+
+.containerTitle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0 25px 0;
+}
+
+nav{
+    background-color: var(--dark-color-bg);
+    width: 100%;
+}
+
+ul{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+    padding: 5px 0;
+}
+
+a{
+    transition: 300ms;
+}
+
+main{
+    place-items: center;
+}
+
+.contMain{
+    display: flex;
+    flex-direction: row;
+    max-width: 700px;
+    margin: 20px;
+    gap: 20px;
+}
+
+.contMainArt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.contSect{
+    background-color: var(--light-color-bgB);
+    max-width: 420px;
+    border: solid 2px var(--light-color-line);
+    border-radius: var(--border-radius);
+    padding: 35px 15px 25px;
+}
+
+.contSect>h3{
+    margin: 5px 0;
+}
+
+.contBox{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.contBoxA{
+    border: solid 2px var(--primary-color-line);
+    border-radius: var(--border-radius);
+    height: 100px;
+    max-width: 135px;
+    padding: 10px;
+    font-size: var(--font-sm);
+    background-color: var(--primary-color-bgB);
+    transition: 300ms;
+}
+
+.contBoxA>h3{
+    margin: 5px 0;
+}
+
+aside{
+    border: solid 2px var(--secondary-color-line);
+    border-radius: var(--border-radius);
+    padding: 10px;
+    max-width: 180px;
+    background-color: var(--secondary-color-bgB);
+}
+
+aside>h3{
+    margin: 10px 0;
+}
+
+button{
+    margin: 10px 0;
+    width: 60px;
+    height: 25px;
+    border-radius: var(--border-radiusB);
+    font-size: var(--font-sm);
+    color: var(--light-color-text);
+    background-color: var(--secondary-color-bgA);
+    border: none;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+footer{
+    background-color: var(--dark-color-bg);
+    color: var(--light-color-text);
+    padding: 15px 0;
+    place-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/*Efectos*/
+
+button:hover{
+    background-color: var(--secondary-color-bgB);
+    color: var(--secondary-color-bgA);
+    border: solid 1px var(--secondary-color-bgA);
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow);
+}
+
+.contBoxA:hover{
+    color: var(--primary-color-text);
+    transform: translateY(-5px);
+    background-color: var(--secondary-color-bgB);
+}
+
+a:hover{
+    color: var(--secondary-color-text);
+}
+
+
+
+@media(width <= 630px){
+    .contMain{
+        flex-direction: column;
+    }
+
+    aside{
+        max-width: 100%;
+    }
+}
+
+@media(width <= 430px){
+    .contBox{
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .contBoxA{
+        min-width: 100%;
+    }
+}
